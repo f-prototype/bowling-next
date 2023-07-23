@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.stock {
+  min-width: 300px;
+  max-width: 45%;
+  p {
+    width: 100%;
+    font-size: 14px;
+  }
+}

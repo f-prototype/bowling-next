@@ -1,0 +1,34 @@
+.footer {
+  display: flex;
+  min-height: 120px;
+  background-color: #0c0f1d;
+  color: #fff;
+  position: relative;
+  a {
+    color: #fff;
+  }
+}
+
+.text {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.iconsContainer {
+  position: absolute;
+  right: 0;
+  top: 30px;
+}
+
+.icon {
+  transform: scale(1.5);
+  margin-right: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.5) translateY(-5px);
+  }
+}

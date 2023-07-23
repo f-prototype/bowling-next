@@ -1,0 +1,18 @@
+.main {
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 0;
+  a {
+    cursor: pointer;
+  }
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.descText {
+  margin-bottom: 20px !important;
+}

@@ -1,0 +1,38 @@
+.btn {
+  padding: 12px 24px 8px;
+  font-size: 12px;
+  line-height: 21px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(to right, #ed12ba, #0f83f3, #ed12ba);
+  background-size: 400% 400%;
+  border-radius: 5px;
+  box-shadow: 0 0px 22.56px 1.44px rgb(26 25 255 / 89%);
+  border: 0;
+  border-bottom: 2px solid #e109e0;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  text-align: center;
+  font-family: 'Mulish', sans-serif;
+  &:hover {
+    transform: scale(0.95);
+    animation: gradient 3.5s ease infinite;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+    box-shadow: 0 0px 22.56px 1.44px rgb(26 25 255 / 89%);
+  }
+  50% {
+    background-position: 100% 50%;
+    box-shadow: 0 0px 22.56px 1.44px rgba(255, 25, 247, 0.89);
+  }
+  100% {
+    background-position: 0% 50%;
+    box-shadow: 0 0px 22.56px 1.44px rgb(26 25 255 / 89%);
+  }
+}

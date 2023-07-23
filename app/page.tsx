@@ -1,95 +1,67 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import styles from './page.module.css';
+import 'normalize.css/normalize.css';
+import Section from '@/components/section/Section';
+import Link from 'next/link';
+import Table from '@/components/UI/table/Table';
+import { tableInf } from '../utils/TableInf';
+import MyForm from '@/components/form/MyForm';
+import Synopsis from '@/components/synopsis/Synopsis';
+import Map from '@/components/map/Map';
+import Slider from '@/components/slider/Slider';
+import Paralax from '@/components/paralax/Paralax';
+import { props } from '@/utils/formInfo';
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
+      <Slider
+        slides={[
+          '/img/slider-b/slide-b1.jpg',
+          '/img/slider-b/slide-b2.jpg',
+          '/img/slider-b/slide-b3.jpg',
+          '/img/slider-b/slide-b4.jpg',
+        ]}
+      />
+      <Section h="боулинг клуб strike в ялте">
         <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
+          Территория нашего боулинг клуба включает в себя 4 дорожки и отдельную
+          зону для отдыха. Особое внимание заслуживает музыка, которая может
+          быть включена по Вашему желанию.
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <p>
+          В нашем боулинг клубе есть отдельный штат сотрудников, к которым Вы
+          всегда можете обратиться за помощью. Они научат Вас основам игры,
+          помогут выработать специальные навыки и поделятся секретами
+          мастерства.
+        </p>
+      </Section>
+      <Paralax img={`url(/img/paralax-b3.jpeg)`} />
+      <Section h="ОСНАЩЕНИЕ БОУЛИНГ КЛУБА">
+        <p>
+          Позаботились мы и о самых маленьких наших гостях: для них сделаны
+          специальные дорожки с бортиками, которые поднимаются во время броска.
+        </p>
+      </Section>
+      <Paralax img={`url(/img/slider1-1.jpg)`} />
+      <Section h="ОТМЕТИТЬ ДЕНЬ РОЖДЕНИЕ В БОУЛИНГЕ">
+        <p>
+          Хотите отметить день рождения ярко? В таком случае приглашаем Вас в
+          наш боулинг клуб! Позаботьтесь о вашем празднике заранее и
+          забронируйте дорожки для боулинга по телефону:
+        </p>
+        <Link href="tel:+79784440004">+7(978)-444-00-04</Link>
+      </Section>
+      <Paralax img={`url(/img/paralax-b2.jpeg)`} />
+      <Section h="ЦЕНЫ НА БОУЛИНГ">
+        <Table table={tableInf} />
+      </Section>
+      <Section h="Бронирование">
+        <MyForm props={props} message="Бронь Дорожки" />
+        <Synopsis text="Бронь действительна только после обратного звонка, не менее чем за 24 часа" />
+      </Section>
+      <Section h="мы на карте">
+        <Map />
+      </Section>
     </main>
-  )
+  );
 }

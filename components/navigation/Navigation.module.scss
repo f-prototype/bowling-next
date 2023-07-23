@@ -1,0 +1,19 @@
+.container {
+  width: auto;
+  display: flex;
+  justify-content: space-around;
+  a {
+    text-shadow: 0 0 5px #000;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    display: none;
+  }
+}

@@ -1,0 +1,128 @@
+.container {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: radial-gradient(
+      circle,
+      #20212500 50%,
+      rgba(59, 73, 105, 1) 100%
+    );
+  }
+  &::before {
+    background: radial-gradient(
+      circle,
+      hsla(0, 0%, 100%, 0) -20%,
+      #212734 100%
+    );
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+  }
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.btnContainer {
+  width: 60px;
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  right: 40px;
+  bottom: 80px;
+  z-index: 2;
+}
+
+.btn {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 60px;
+  height: 30px;
+  outline: none;
+  background-color: transparent;
+  // background-color: #4b516c;
+  color: #fff;
+  transition: all 0.3s ease-in;
+  border: 0;
+  box-shadow: 0 0 40px 40px #4b516c inset, 0 0 0 0 #4b516c;
+  &:hover {
+    // background: transparent;
+    box-shadow: 0 0 10px 0 #4b516c inset, 0 0 10px 4px #4b516c;
+    // transform: scale(0.95);
+  }
+}
+
+// .third {
+//   border-color: $blue;
+//   color: #fff;
+//   box-shadow: 0 0 40px 40px $blue inset, 0 0 0 0 $blue;
+//   transition: all 150ms ease-in-out;
+
+//   &:hover {
+//     box-shadow: 0 0 10px 0 $blue inset, 0 0 10px 4px $blue;
+//   }
+// }
+
+.dotsContainer {
+  display: none;
+  position: absolute;
+  right: 40px;
+  bottom: 120px;
+  z-index: 2;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.activeDot {
+  background: linear-gradient(to right, #ed12ba, #0f83f3);
+  box-shadow: 0 0px 10px #ed12ba;
+}
+
+@media (max-width: 500px) {
+  .dotsContainer {
+    display: block;
+  }
+  .btnContainer {
+    display: none;
+  }
+}

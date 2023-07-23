@@ -1,0 +1,27 @@
+.form input {
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid rgb(206, 223, 225);
+  outline: none;
+  padding: 15px;
+  margin-right: 10px;
+  transition: all 0.5s linear;
+  font-size: 14px;
+  &:focus {
+    box-shadow: 0 0px 12.56px 1.44px rgb(12, 15, 29) !important;
+  }
+}
+
+.error {
+  animation: ripple 2s infinite alternate;
+}
+
+@keyframes ripple {
+  from {
+    box-shadow: 0 0px 8px rgba(251, 74, 74, 0.89);
+  }
+  to {
+    box-shadow: 0 0px 22.56px 1.44px rgba(255, 25, 25, 0.89);
+  }
+}
